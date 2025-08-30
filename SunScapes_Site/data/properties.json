@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "Luxury Beachfront Villa in Cabo",
+    "price_usd": 2500000,
+    "main_image_url": "https://images.unsplash.com/photo-1613553424170-1a4631309834?q=80&w=2070&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1613553424170-1a4631309834?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "is_ocean_view": true,
+    "city": "Cabo San Lucas",
+    "community": "Pedregal",
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "area_sqft": 6000,
+    "description": "Experience unparalleled luxury in this stunning 5-bedroom villa located in the prestigious Pedregal community. Featuring breathtaking ocean views, a private infinity pool, and state-of-the-art amenities, this property is the epitome of Cabo living."
+  },
+  {
+    "id": 2,
+    "title": "Modern Condo in La Paz",
+    "price_usd": 650000,
+    "main_image_url": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "is_ocean_view": false,
+    "city": "La Paz",
+    "community": "Malecon",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area_sqft": 1800,
+    "description": "Sleek and modern 2-bedroom condo just steps from the famous Malecon in La Paz. Enjoy city views, a rooftop pool, and easy access to the best restaurants and shops in town."
+  },
+  {
+    "id": 3,
+    "title": "Charming Todos Santos Casita",
+    "price_usd": 875000,
+    "main_image_url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1605276374104-5de67d183963?q=80&w=1974&auto=format&fit=crop"
+    ],
+    "is_ocean_view": true,
+    "city": "Todos Santos",
+    "community": "El Pescadero",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "area_sqft": 2500,
+    "description": "A beautifully restored casita in the artistic hub of Todos Santos. This property boasts traditional Mexican architecture, a lush garden, and a tranquil atmosphere perfect for relaxation."
+  },
+  {
+    "id": 4,
+    "title": "San Jose del Cabo Golf Retreat",
+    "price_usd": 1200000,
+    "main_image_url": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2070&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585152915-d208bec867a1?q=80&w=1975&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1628744448842-149e7b351e0c?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "is_ocean_view": false,
+    "city": "San Jose del Cabo",
+    "community": "Club Campestre",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "area_sqft": 4500,
+    "description": "Live on the fairway in this exquisite 4-bedroom home in a premier golf community. This property offers spacious living areas, a gourmet kitchen, and a private pool with views of the course."
+  },
+  {
+    "id": 5,
+    "title": "Secluded East Cape Escape",
+    "price_usd": 950000,
+    "main_image_url": "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=2070&auto=format&fit=crop"
+    ],
+    "is_ocean_view": true,
+    "city": "East Cape",
+    "community": "Los Barriles",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area_sqft": 2200,
+    "description": "Find peace and tranquility in this off-the-grid home on the beautiful East Cape. Perfect for adventurers and those seeking privacy, with stunning, unspoiled ocean views."
+  },
+  {
+    "id": 6,
+    "title": "Loreto Bay Golf Villa",
+    "price_usd": 780000,
+    "main_image_url": "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1615874987593-2b2a6f585a97?q=80&w=1939&auto=format&fit=crop"
+    ],
+    "is_ocean_view": true,
+    "city": "Loreto",
+    "community": "Loreto Bay",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "area_sqft": 2800,
+    "description": "Charming villa in the walkable community of Loreto Bay. Features a viewing tower with spectacular sea and mountain views, courtyards, and community pools."
+  }
+]
