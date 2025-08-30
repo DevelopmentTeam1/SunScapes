@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="dashboard_title">My Dashboard - SunScapes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sunshine-orange': '#FFA500',
+                        'ocean-blue': '#0077BE',
+                        'sand-beige': '#F5E6D3',
+                        'charcoal': '#2C3E50',
+                    },
+                    fontFamily: {
+                        'sans': ['Open Sans', 'sans-serif'],
+                        'display': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <div id="hreflang-container"></div>
+</head>
+<body class="bg-sand-beige/30 dark:bg-charcoal/70 text-charcoal dark:text-sand-beige transition-colors duration-300">
+
+    <header class="bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="https://r2.flowith.net/files/4a9e2ea6-7bb8-4edd-a812-957afef9b132/1755746305074-logo_sm@180x131.png" alt="SunScapes Logo" class="h-10">
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-display font-semibold">
+                 <a href="index.html#featured-properties" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_properties">Properties</a>
+                <a href="agent_profile.html" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_our_agents">Our Agents</a>
+                <a href="forums.html" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_forums">Forums</a>
+                <a href="dashboard.html" class="text-ocean-blue dark:text-sunshine-orange" data-i18n="nav_dashboard">Dashboard</a>
+                <a href="#" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_favorites">Favorites</a>
+                <a href="blog.html" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_blog">Blog</a>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div id="language-switcher-container"></div>
+                <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">
+                    <i data-lucide="sun" class="block dark:hidden"></i>
+                    <i data-lucide="moon" class="hidden dark:block"></i>
+                </button>
+                 <button class="md:hidden p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <h1 class="text-4xl font-display font-bold mb-8" data-i18n="dashboard_welcome">Welcome to your Dashboard</h1>
+
+        <div class="border-b border-charcoal/20 dark:border-sand-beige/20 mb-8">
+            <nav class="dashboard-tabs -mb-px flex space-x-6" aria-label="Tabs">
+                <button data-tab="recommendations" class="tab-button active">
+                    <span data-i18n="dashboard_tab_recommendations">Recommended For You</span>
+                </button>
+                <button data-tab="documents" class="tab-button">
+                    <span data-i18n="dashboard_tab_documents">My Documents</span>
+                </button>
+                <button data-tab="favorites" class="tab-button">
+                    <span data-i18n="dashboard_tab_favorites">My Favorites</span>
+                </button>
+            </nav>
+        </div>
+
+        <div>
+            <div id="recommendations-content" class="tab-content active">
+                <h2 class="text-2xl font-display font-bold mb-6" data-i18n="recommendations_title">AI-Powered Recommendations</h2>
+                <div id="recommendation-carousel" class="recommendation-carousel">
+                </div>
+            </div>
+
+            <div id="documents-content" class="tab-content">
+                <h2 class="text-2xl font-display font-bold mb-6" data-i18n="documents_title">My Documents</h2>
+                <div class="bg-white dark:bg-charcoal p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4">
+                        <p class="text-charcoal/70 dark:text-sand-beige/70" data-i18n="documents_desc">Upload and manage your documents securely.</p>
+                        <label class="cursor-pointer bg-sunshine-orange text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center space-x-2">
+                            <i data-lucide="upload" class="w-5 h-5"></i>
+                            <span data-i18n="documents_upload_button">Upload Document</span>
+                            <input type="file" class="hidden">
+                        </label>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="document-item">
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="file-text" class="w-6 h-6 text-ocean-blue"></i>
+                                <div>
+                                    <p class="font-semibold" data-i18n="doc_1_name">Proof_of_Funds.pdf</p>
+                                    <p class="text-sm text-charcoal/60 dark:text-sand-beige/60" data-i18n="doc_1_date">Uploaded: Aug 20, 2025</p>
+                                </div>
+                            </div>
+                            <button class="p-2 text-charcoal/50 hover:text-sunshine-orange dark:text-sand-beige/50 dark:hover:text-sunshine-orange transition-colors">
+                                <i data-lucide="trash-2" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                        <div class="document-item">
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="file-text" class="w-6 h-6 text-ocean-blue"></i>
+                                <div>
+                                    <p class="font-semibold" data-i18n="doc_2_name">Passport_Scan.jpg</p>
+                                    <p class="text-sm text-charcoal/60 dark:text-sand-beige/60" data-i18n="doc_2_date">Uploaded: Aug 18, 2025</p>
+                                </div>
+                            </div>
+                             <button class="p-2 text-charcoal/50 hover:text-sunshine-orange dark:text-sand-beige/50 dark:hover:text-sunshine-orange transition-colors">
+                                <i data-lucide="trash-2" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="favorites-content" class="tab-content">
+                <h2 class="text-2xl font-display font-bold mb-6" data-i18n="favorites_title">My Favorites</h2>
+                <p class="text-center py-12 text-charcoal/60 dark:text-sand-beige/60" data-i18n="favorites_empty">You haven't favorited any properties yet.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-charcoal text-sand-beige/80 py-12 mt-16">
+        <div class="container mx-auto px-6">
+            <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+                <p data-i18n="footer_copyright">&copy; 2025 SunScapes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="i18n.js"></script>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

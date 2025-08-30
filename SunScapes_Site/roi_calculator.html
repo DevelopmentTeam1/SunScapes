@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment ROI Calculator - SunScapes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sunshine-orange': '#FFA500',
+                        'ocean-blue': '#0077BE',
+                        'sand-beige': '#F5E6D3',
+                        'charcoal': '#2C3E50',
+                    },
+                    fontFamily: {
+                        'sans': ['Open Sans', 'sans-serif'],
+                        'display': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-sand-beige/30 dark:bg-charcoal/70 text-charcoal dark:text-sand-beige transition-colors duration-300">
+
+    <header class="bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="https://r2.flowith.net/files/4a9e2ea6-7bb8-4edd-a812-957afef9b132/1755746305074-logo_sm@180x131.png" alt="SunScapes Logo" class="h-10">
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-display font-semibold">
+                <a href="index.html#featured-properties" class="hover:text-sunshine-orange transition-colors">Properties</a>
+                <div class="relative" id="tools-dropdown-container">
+                    <button id="tools-dropdown-button" class="text-sunshine-orange flex items-center">
+                        <span>Tools</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
+                    </button>
+                    <div id="tools-dropdown-menu" class="hidden absolute top-full mt-2 w-56 bg-white dark:bg-charcoal rounded-md shadow-lg py-1 z-50 ring-1 ring-black ring-opacity-5">
+                        <a href="quiz.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Dream Property Quiz</a>
+                        <a href="roi_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Investment ROI Calculator</a>
+                        <a href="cost_of_living_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Cost of Living Calculator</a>
+                    </div>
+                </div>
+                <a href="#" class="hover:text-sunshine-orange transition-colors">Favorites</a>
+                <a href="blog.html" class="hover:text-sunshine-orange transition-colors">Blog</a>
+                <a href="#" class="hover:text-sunshine-orange transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">
+                    <i data-lucide="sun" class="block dark:hidden"></i>
+                    <i data-lucide="moon" class="hidden dark:block"></i>
+                </button>
+                <button class="hidden md:block bg-sunshine-orange text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                    List Property
+                </button>
+                <button class="md:hidden p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-4xl font-display font-bold">Investment ROI Calculator</h1>
+                <p class="text-lg text-charcoal/70 dark:text-sand-beige/70 mt-2">Estimate the potential return on your property investment.</p>
+            </div>
+
+            <div class="bg-white dark:bg-charcoal rounded-xl shadow-lg p-6 md:p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 space-y-6">
+                        <div>
+                            <label for="purchase-price" class="block font-semibold mb-1">Purchase Price</label>
+                            <input type="number" id="purchase-price" value="500000" class="w-full bg-sand-beige/40 dark:bg-gray-700 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sunshine-orange">
+                        </div>
+                        <div>
+                            <label for="down-payment-percent" class="flex justify-between font-semibold mb-1"><span>Down Payment</span><span id="down-payment-value">20%</span></label>
+                            <input type="range" id="down-payment-percent" min="0" max="100" value="20" class="w-full h-2 bg-sand-beige rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                        </div>
+                        <div>
+                             <label for="interest-rate" class="flex justify-between font-semibold mb-1"><span>Loan Interest Rate</span><span id="interest-rate-value">5.00%</span></label>
+                            <input type="range" id="interest-rate" min="1" max="15" step="0.05" value="5" class="w-full h-2 bg-sand-beige rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                        </div>
+                        <div>
+                            <label for="loan-term" class="flex justify-between font-semibold mb-1"><span>Loan Term</span><span id="loan-term-value">30 years</span></label>
+                            <input type="range" id="loan-term" min="5" max="40" value="30" class="w-full h-2 bg-sand-beige rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                        </div>
+                         <div>
+                            <label for="rental-income" class="block font-semibold mb-1">Estimated Monthly Rental Income</label>
+                            <input type="number" id="rental-income" value="3000" class="w-full bg-sand-beige/40 dark:bg-gray-700 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sunshine-orange">
+                        </div>
+                         <div>
+                            <label for="monthly-expenses" class="block font-semibold mb-1">Total Monthly Expenses</label>
+                            <input type="number" id="monthly-expenses" value="500" class="w-full bg-sand-beige/40 dark:bg-gray-700 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sunshine-orange" placeholder="HOA, taxes, insurance, etc.">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-1 bg-sand-beige/30 dark:bg-charcoal/60 rounded-lg p-6 flex flex-col justify-center space-y-6">
+                        <div class="text-center">
+                            <h3 class="font-semibold text-charcoal/70 dark:text-sand-beige/70">Monthly Cash Flow</h3>
+                            <p id="monthly-cashflow" class="text-4xl font-bold font-display text-green-500">$534</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="font-semibold text-charcoal/70 dark:text-sand-beige/70">Cash on Cash ROI</h3>
+                            <p id="cash-on-cash-roi" class="text-4xl font-bold font-display text-ocean-blue dark:text-white">6.41%</p>
+                        </div>
+                         <div class="text-center">
+                            <h3 class="font-semibold text-charcoal/70 dark:text-sand-beige/70">Cap Rate</h3>
+                            <p id="cap-rate" class="text-4xl font-bold font-display text-ocean-blue dark:text-white">6.00%</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-8 pt-6 border-t border-sand-beige dark:border-gray-700 prose dark:prose-invert max-w-none">
+                    <h4 class="font-bold">Metric Explanations:</h4>
+                    <dl>
+                        <dt class="font-semibold text-ocean-blue dark:text-sunshine-orange">Monthly Cash Flow:</dt>
+                        <dd class="ml-4 mb-2">The net amount of cash you earn or lose each month. It's calculated as (Monthly Rental Income - Monthly Expenses - Monthly Mortgage Payment).</dd>
+                        <dt class="font-semibold text-ocean-blue dark:text-sunshine-orange">Cash-on-Cash ROI:</dt>
+                        <dd class="ml-4 mb-2">Measures the annual return on the actual cash invested. It's calculated as (Annual Cash Flow / Total Cash Invested).</dd>
+                        <dt class="font-semibold text-ocean-blue dark:text-sunshine-orange">Capitalization Rate (Cap Rate):</dt>
+                        <dd class="ml-4">Estimates the rate of return on a property if purchased with cash. It's calculated as (Annual Net Operating Income / Purchase Price).</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-charcoal text-sand-beige/80 py-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">SunScapes</h4>
+                    <p class="text-sm">Discover your perfect vacation home or permanent residence with stunning views and prime locations.</p>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#featured-properties" class="hover:text-sunshine-orange transition">Properties</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">List Property</a></li>
+                        <li><a href="blog.html" class="hover:text-sunshine-orange transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Support</h4>
+                     <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Help Center</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">About Us</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Stay Updated</h4>
+                    <p class="text-sm mb-3">Get exclusive access to new listings and market insights.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Email Address" class="bg-gray-700 text-white p-2 rounded-l-md w-full focus:outline-none focus:ring-2 focus:ring-sunshine-orange">
+                        <button class="bg-sunshine-orange p-2 rounded-r-md hover:opacity-90 transition">
+                            <i data-lucide="send" class="w-5 h-5 text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2025 SunScapes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="roi_calculator.js"></script>
+</body>
+</html>

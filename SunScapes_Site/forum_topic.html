@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum: Buying in BCS - SunScapes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sunshine-orange': '#FFA500',
+                        'ocean-blue': '#0077BE',
+                        'sand-beige': '#F5E6D3',
+                        'charcoal': '#2C3E50',
+                    },
+                    fontFamily: {
+                        'sans': ['Open Sans', 'sans-serif'],
+                        'display': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white dark:bg-charcoal text-charcoal dark:text-sand-beige transition-colors duration-300">
+
+    <header class="bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="https://r2.flowith.net/files/4a9e2ea6-7bb8-4edd-a812-957afef9b132/1755746305074-logo_sm@180x131.png" alt="SunScapes Logo" class="h-10">
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-display font-semibold">
+                <a href="index.html#featured-properties" class="hover:text-sunshine-orange transition-colors">Properties</a>
+                <a href="agent_profile.html" class="hover:text-sunshine-orange transition-colors">Our Agents</a>
+                <div class="relative" id="tools-dropdown-container">
+                    <button id="tools-dropdown-button" class="hover:text-sunshine-orange transition-colors flex items-center">
+                        <span>Tools</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
+                    </button>
+                    <div id="tools-dropdown-menu" class="hidden absolute top-full mt-2 w-56 bg-white dark:bg-charcoal rounded-md shadow-lg py-1 z-50 ring-1 ring-black ring-opacity-5">
+                        <a href="quiz.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Dream Property Quiz</a>
+                        <a href="roi_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Investment ROI Calculator</a>
+                        <a href="cost_of_living_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Cost of Living Calculator</a>
+                        <a href="neighborhood_explorer.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Neighborhood Explorer</a>
+                        <a href="climate_comparison.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Climate Comparison</a>
+                        <a href="legal_resources.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50 border-t border-gray-200 dark:border-gray-600">Legal Resource Center</a>
+                    </div>
+                </div>
+                <a href="forums.html" class="hover:text-sunshine-orange transition-colors">Forums</a>
+                <a href="#" class="hover:text-sunshine-orange transition-colors">Favorites</a>
+                <a href="blog.html" class="hover:text-sunshine-orange transition-colors">Blog</a>
+                <a href="#" class="hover:text-sunshine-orange transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">
+                    <i data-lucide="sun" class="block dark:hidden"></i>
+                    <i data-lucide="moon" class="hidden dark:block"></i>
+                </button>
+                <button class="hidden md:block bg-sunshine-orange text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                    List Property
+                </button>
+                <button class="md:hidden p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="bg-sand-beige/30 dark:bg-charcoal/70">
+        <div class="container mx-auto px-6 py-16 md:py-24">
+            <nav class="breadcrumb text-sm mb-6">
+                <a href="index.html">Home</a><span>&gt;</span><a href="forums.html">Forums</a><span>&gt;</span><span class="text-charcoal dark:text-sand-beige">Buying in BCS</span>
+            </nav>
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                <h1 class="text-3xl md:text-4xl font-display font-bold">Buying in BCS</h1>
+                <button class="mt-4 md:mt-0 bg-ocean-blue text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center space-x-2">
+                    <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                    <span>New Topic</span>
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-charcoal rounded-lg shadow-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-sand-beige/50 dark:bg-charcoal/60">
+                            <tr>
+                                <th class="p-4 text-left font-bold font-display uppercase tracking-wider text-sm">Topic</th>
+                                <th class="p-4 text-center font-bold font-display uppercase tracking-wider text-sm hidden sm:table-cell">Replies</th>
+                                <th class="p-4 text-center font-bold font-display uppercase tracking-wider text-sm hidden sm:table-cell">Views</th>
+                                <th class="p-4 text-left font-bold font-display uppercase tracking-wider text-sm">Last Post</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-sand-beige dark:divide-charcoal/50">
+                            <tr class="hover:bg-sand-beige/30 dark:hover:bg-charcoal/50 transition-colors">
+                                <td class="p-4">
+                                    <a href="forum_post.html" class="font-semibold text-lg hover:text-ocean-blue dark:hover:text-sunshine-orange transition-colors">Understanding Fideicomiso: A Complete Guide</a>
+                                    <p class="text-sm text-charcoal/70 dark:text-sand-beige/70">by <span class="font-semibold text-ocean-blue">AgentJane</span>, 3 days ago</p>
+                                </td>
+                                <td class="p-4 text-center text-lg hidden sm:table-cell">42</td>
+                                <td class="p-4 text-center text-lg hidden sm:table-cell">2.1k</td>
+                                <td class="p-4 text-sm">
+                                    <p>by <span class="font-semibold text-ocean-blue">ExpatMike</span></p>
+                                    <p class="text-charcoal/70 dark:text-sand-beige/70">2 hours ago</p>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sand-beige/30 dark:hover:bg-charcoal/50 transition-colors">
+                                <td class="p-4">
+                                    <a href="forum_post.html" class="font-semibold text-lg hover:text-ocean-blue dark:hover:text-sunshine-orange transition-colors">Best areas in La Paz for families?</a>
+                                    <p class="text-sm text-charcoal/70 dark:text-sand-beige/70">by <span class="font-semibold text-ocean-blue">NewFamily</span>, 1 week ago</p>
+                                </td>
+                                <td class="p-4 text-center text-lg hidden sm:table-cell">15</td>
+                                <td class="p-4 text-center text-lg hidden sm:table-cell">876</td>
+                                <td class="p-4 text-sm">
+                                    <p>by <span class="font-semibold text-ocean-blue">LaPazLocal</span></p>
+                                    <p class="text-charcoal/70 dark:text-sand-beige/70">1 day ago</p>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sand-beige/30 dark:hover:bg-charcoal/50 transition-colors">
+                                <td class="p-4">
+                                    <a href="forum_post.html" class="font-semibold text-lg hover:text-ocean-blue dark:hover:text-sunshine-orange transition-colors">Capital Gains Tax for Foreigners</a>
+                                    <p class="text-sm text-charcoal/70 dark:text-sand-beige/70">by <span class="font-semibold text-ocean-blue">InvestorDan</span>, 2 weeks ago</p>
+                                </td>
+                                <td class="p-4 text-center text-lg hidden sm:table-cell">28</td>
+                                <td class="p-4 text-center text-lg hidden sm:table-cell">1.5k</td>
+                                <td class="p-4 text-sm">
+                                    <p>by <span class="font-semibold text-ocean-blue">AccountantLeo</span></p>
+                                    <p class="text-charcoal/70 dark:text-sand-beige/70">3 days ago</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-charcoal text-sand-beige/80 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">SunScapes</h4>
+                    <p class="text-sm">Discover your perfect vacation home or permanent residence with stunning views and prime locations.</p>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#featured-properties" class="hover:text-sunshine-orange transition">Properties</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">List Property</a></li>
+                        <li><a href="blog.html" class="hover:text-sunshine-orange transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Support</h4>
+                     <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Help Center</a></li>
+                        <li><a href="legal_resources.html" class="hover:text-sunshine-orange transition">Legal Resources</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">About Us</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Stay Updated</h4>
+                    <p class="text-sm mb-3">Get exclusive access to new listings and market insights.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Email Address" class="bg-gray-700 text-white p-2 rounded-l-md w-full focus:outline-none focus:ring-2 focus:ring-sunshine-orange">
+                        <button class="bg-sunshine-orange p-2 rounded-r-md hover:opacity-90 transition">
+                            <i data-lucide="send" class="w-5 h-5 text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2025 SunScapes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="chatbot-ui">
+        <button id="chat-icon-button" class="fixed bottom-6 right-6 bg-ocean-blue text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center hover:bg-ocean-blue/90 transition-transform hover:scale-110 z-50">
+            <i data-lucide="message-circle" class="w-8 h-8"></i>
+        </button>
+
+        <div id="chat-window" class="chat-window chat-hidden">
+            <div class="flex flex-col h-[60vh] max-h-[600px]">
+                <div class="flex justify-between items-center p-4 bg-charcoal text-white rounded-t-lg">
+                    <h3 class="font-display font-bold">Virtual Buyer's Agent</h3>
+                    <button id="close-chat-button" class="p-1 hover:bg-white/20 rounded-full">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <div class="flex-grow p-4 overflow-y-auto bg-sand-beige/30 dark:bg-charcoal/70">
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-ocean-blue flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="bot" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div class="bg-white dark:bg-charcoal/80 p-3 rounded-lg max-w-xs">
+                                <p class="text-sm">Hello! How can I help you find your dream property in Baja today?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 border-t border-sand-beige dark:border-charcoal/50 bg-white dark:bg-charcoal/80">
+                    <div class="flex items-center gap-2">
+                        <input type="text" placeholder="Type your message..." class="w-full bg-sand-beige/40 dark:bg-gray-700 p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-sunshine-orange text-charcoal dark:text-white">
+                        <button class="bg-sunshine-orange text-white p-3 rounded-full hover:opacity-90 transition-opacity flex-shrink-0">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

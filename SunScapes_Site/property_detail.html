@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="property_details_title">Property Details - SunScapes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sunshine-orange': '#FFA500',
+                        'ocean-blue': '#0077BE',
+                        'sand-beige': '#F5E6D3',
+                        'charcoal': '#2C3E50',
+                    },
+                    fontFamily: {
+                        'sans': ['Open Sans', 'sans-serif'],
+                        'display': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <div id="hreflang-container"></div>
+</head>
+<body class="bg-white dark:bg-charcoal text-charcoal dark:text-sand-beige transition-colors duration-300">
+
+    <header class="bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="https://r2.flowith.net/files/4a9e2ea6-7bb8-4edd-a812-957afef9b132/1755746305074-logo_sm@180x131.png" alt="SunScapes Logo" class="h-10">
+                </a>
+            </div>
+             <div class="hidden md:flex items-center space-x-8 font-display font-semibold">
+                <a href="index.html#featured-properties" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_properties">Properties</a>
+                <a href="agent_profile.html" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_our_agents">Our Agents</a>
+                <a href="forums.html" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_forums">Forums</a>
+                <a href="dashboard.html" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_dashboard">Dashboard</a>
+                <a href="#" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_favorites">Favorites</a>
+                <a href="blog.html" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_blog">Blog</a>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div id="language-switcher-container"></div>
+                <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">
+                    <i data-lucide="sun" class="block dark:hidden"></i>
+                    <i data-lucide="moon" class="hidden dark:block"></i>
+                </button>
+                 <button class="md:hidden p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="property-details-content" class="container mx-auto px-6 py-12">
+        <div id="loading-state" class="text-center py-20">
+            <h1 class="text-2xl font-bold" data-i18n="js_loading_details">Loading Property Details...</h1>
+        </div>
+    </main>
+    
+    <section id="recommended-section" class="py-16 md:py-24 bg-sand-beige/30 dark:bg-charcoal/70 hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-display font-bold" data-i18n="similar_properties_title">Similar Properties</h2>
+                <p class="text-lg text-charcoal/70 dark:text-sand-beige/70 mt-2" data-i18n="similar_properties_subtitle">Explore other properties you might like.</p>
+            </div>
+            <div id="similar-properties-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-charcoal text-sand-beige/80 py-12">
+        <div class="container mx-auto px-6">
+            <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+                <p data-i18n="footer_copyright">&copy; 2025 SunScapes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="tour-modal" class="modal-overlay modal-hidden">
+        <div class="modal-container">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-display font-bold" data-i18n="modal_tour_title">Schedule a Virtual Tour</h2>
+                <button id="close-tour-modal-btn" class="p-2 rounded-full hover:bg-sand-beige/50 dark:hover:bg-charcoal-light">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <form id="tour-form">
+                <div class="space-y-4">
+                    <div>
+                        <label for="tour-date" class="block text-sm font-semibold mb-2" data-i18n="modal_date_label">Preferred Date</label>
+                        <input type="date" id="tour-date" required class="w-full bg-sand-beige/40 dark:bg-gray-700 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sunshine-orange text-charcoal dark:text-white">
+                    </div>
+                    <div>
+                        <label for="tour-time" class="block text-sm font-semibold mb-2" data-i18n="modal_time_label">Preferred Time</label>
+                        <input type="time" id="tour-time" required class="w-full bg-sand-beige/40 dark:bg-gray-700 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sunshine-orange text-charcoal dark:text-white">
+                    </div>
+                    <div>
+                        <label for="tour-notes" class="block text-sm font-semibold mb-2" data-i18n="modal_notes_label">Notes (optional)</label>
+                        <textarea id="tour-notes" rows="3" data-i18n-placeholder="modal_notes_placeholder" placeholder="Any specific questions or things you'd like to see?" class="w-full bg-sand-beige/40 dark:bg-gray-700 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-sunshine-orange text-charcoal dark:text-white"></textarea>
+                    </div>
+                </div>
+                <div class="mt-8 text-right">
+                    <button type="submit" class="bg-ocean-blue text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity" data-i18n="modal_submit_button">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script type="module" src="i18n.js"></script>
+    <script type="module" src="property_detail.js"></script>
+</body>
+</html>

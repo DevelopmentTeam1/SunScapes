@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Profile - SunScapes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sunshine-orange': '#FFA500',
+                        'ocean-blue': '#0077BE',
+                        'sand-beige': '#F5E6D3',
+                        'charcoal': '#2C3E50',
+                    },
+                    fontFamily: {
+                        'sans': ['Open Sans', 'sans-serif'],
+                        'display': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-sand-beige/30 dark:bg-charcoal/70 text-charcoal dark:text-sand-beige transition-colors duration-300">
+
+    <header class="bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="https://r2.flowith.net/files/4a9e2ea6-7bb8-4edd-a812-957afef9b132/1755746305074-logo_sm@180x131.png" alt="SunScapes Logo" class="h-10">
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-display font-semibold">
+                <a href="index.html#featured-properties" class="hover:text-sunshine-orange transition-colors">Properties</a>
+                <a href="agent_profile.html" class="hover:text-sunshine-orange transition-colors">Our Agents</a>
+                <div class="relative" id="tools-dropdown-container">
+                    <button id="tools-dropdown-button" class="hover:text-sunshine-orange transition-colors flex items-center">
+                        <span>Tools</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
+                    </button>
+                    <div id="tools-dropdown-menu" class="hidden absolute top-full mt-2 w-56 bg-white dark:bg-charcoal rounded-md shadow-lg py-1 z-50 ring-1 ring-black ring-opacity-5">
+                        <a href="quiz.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Dream Property Quiz</a>
+                        <a href="roi_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Investment ROI Calculator</a>
+                        <a href="cost_of_living_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Cost of Living Calculator</a>
+                        <a href="neighborhood_explorer.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Neighborhood Explorer</a>
+                        <a href="legal_resources.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50 border-t border-gray-200 dark:border-gray-600">Legal Resource Center</a>
+                    </div>
+                </div>
+                <a href="#" class="hover:text-sunshine-orange transition-colors">Favorites</a>
+                <a href="blog.html" class="hover:text-sunshine-orange transition-colors">Blog</a>
+                <a href="#" class="hover:text-sunshine-orange transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">
+                    <i data-lucide="sun" class="block dark:hidden"></i>
+                    <i data-lucide="moon" class="hidden dark:block"></i>
+                </button>
+                <button class="hidden md:block bg-sunshine-orange text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                    List Property
+                </button>
+                <button class="md:hidden p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-12 md:py-20">
+        <div class="container mx-auto px-6">
+            <div class="bg-white dark:bg-charcoal rounded-xl shadow-2xl p-6 md:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+                    <div class="lg:col-span-1 text-center lg:text-left">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop" alt="Agent Portrait" class="w-48 h-48 rounded-full mx-auto lg:mx-0 object-cover shadow-lg border-4 border-sunshine-orange">
+                        <h1 class="font-display text-3xl font-bold mt-6">Jessica Miller</h1>
+                        <p class="text-ocean-blue font-semibold text-lg">Lead Real Estate Advisor</p>
+                        
+                        <div class="mt-6 space-y-3 text-left w-fit mx-auto lg:mx-0">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="phone" class="w-5 h-5 text-sunshine-orange"></i>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="mail" class="w-5 h-5 text-sunshine-orange"></i>
+                                <span>jessica.m@sunscapes.com</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="message-circle" class="w-5 h-5 text-sunshine-orange"></i>
+                                <span>WhatsApp Available</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex justify-center lg:justify-start space-x-4">
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-2">
+                        <h2 class="font-display text-2xl font-bold border-b-2 border-sand-beige dark:border-charcoal/70 pb-2 mb-4">About Me</h2>
+                        <p class="text-charcoal/80 dark:text-sand-beige/80 mb-8">
+                            With over 15 years of experience in the luxury real estate market, Jessica brings a wealth of knowledge and a passion for the Baja lifestyle to every client interaction. She specializes in waterfront properties and new developments in the La Paz and Todos Santos areas. Her commitment to transparency and client success has made her one of the top agents in the region.
+                        </p>
+
+                        <h2 class="font-display text-2xl font-bold border-b-2 border-sand-beige dark:border-charcoal/70 pb-2 mb-4">Agent Verification</h2>
+                        <div id="agent-badges" class="flex flex-wrap gap-4 mb-8">
+                            <div class="flex items-center bg-sand-beige/50 dark:bg-charcoal/60 p-3 rounded-lg shadow-sm">
+                                <i data-lucide="shield-check" class="w-7 h-7 text-sunshine-orange mr-3"></i>
+                                <div>
+                                    <p class="font-bold font-display">SunScapes Certified</p>
+                                    <p class="text-sm text-charcoal/70 dark:text-sand-beige/70">Verified top-tier agent.</p>
+                                </div>
+                            </div>
+                             <div class="flex items-center bg-sand-beige/50 dark:bg-charcoal/60 p-3 rounded-lg shadow-sm">
+                                <i data-lucide="check-circle" class="w-7 h-7 text-ocean-blue mr-3"></i>
+                                <div>
+                                    <p class="font-bold font-display">MLS Verified</p>
+                                    <p class="text-sm text-charcoal/70 dark:text-sand-beige/70">Active member of BCS MLS.</p>
+                                </div>
+                            </div>
+                             <div class="flex items-center bg-sand-beige/50 dark:bg-charcoal/60 p-3 rounded-lg shadow-sm">
+                                <i data-lucide="award" class="w-7 h-7 text-gray-500 dark:text-gray-400 mr-3"></i>
+                                <div>
+                                    <p class="font-bold font-display">Top Producer 2024</p>
+                                    <p class="text-sm text-charcoal/70 dark:text-sand-beige/70">Exceeded $10M in sales.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="font-display text-2xl font-bold border-b-2 border-sand-beige dark:border-charcoal/70 pb-2 mb-4">My Listings</h2>
+                        <div class="text-center py-8 bg-sand-beige/30 dark:bg-charcoal/50 rounded-lg">
+                           <p class="text-charcoal/70 dark:text-sand-beige/70">Agent's property listings would be displayed here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-charcoal text-sand-beige/80 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">SunScapes</h4>
+                    <p class="text-sm">Discover your perfect vacation home or permanent residence with stunning views and prime locations.</p>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#featured-properties" class="hover:text-sunshine-orange transition">Properties</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">List Property</a></li>
+                        <li><a href="blog.html" class="hover:text-sunshine-orange transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Support</h4>
+                     <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Help Center</a></li>
+                        <li><a href="legal_resources.html" class="hover:text-sunshine-orange transition">Legal Resources</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">About Us</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Stay Updated</h4>
+                    <p class="text-sm mb-3">Get exclusive access to new listings and market insights.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Email Address" class="bg-gray-700 text-white p-2 rounded-l-md w-full focus:outline-none focus:ring-2 focus:ring-sunshine-orange">
+                        <button class="bg-sunshine-orange p-2 rounded-r-md hover:opacity-90 transition">
+                            <i data-lucide="send" class="w-5 h-5 text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2025 SunScapes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Explorer - SunScapes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sunshine-orange': '#FFA500',
+                        'ocean-blue': '#0077BE',
+                        'sand-beige': '#F5E6D3',
+                        'charcoal': '#2C3E50',
+                    },
+                    fontFamily: {
+                        'sans': ['Open Sans', 'sans-serif'],
+                        'display': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white dark:bg-charcoal text-charcoal dark:text-sand-beige transition-colors duration-300 flex flex-col h-screen">
+
+    <header class="bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="https://r2.flowith.net/files/4a9e2ea6-7bb8-4edd-a812-957afef9b132/1755746305074-logo_sm@180x131.png" alt="SunScapes Logo" class="h-10">
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-display font-semibold">
+                 <a href="index.html#featured-properties" class="hover:text-sunshine-orange transition-colors">Properties</a>
+                <div class="relative" id="tools-dropdown-container">
+                    <button id="tools-dropdown-button" class="text-sunshine-orange transition-colors flex items-center">
+                        <span>Tools</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
+                    </button>
+                    <div id="tools-dropdown-menu" class="hidden absolute top-full mt-2 w-56 bg-white dark:bg-charcoal rounded-md shadow-lg py-1 z-50 ring-1 ring-black ring-opacity-5">
+                        <a href="quiz.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Dream Property Quiz</a>
+                        <a href="roi_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Investment ROI Calculator</a>
+                        <a href="cost_of_living_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Cost of Living Calculator</a>
+                        <a href="neighborhood_explorer.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige bg-sand-beige/50 dark:bg-charcoal/50">Neighborhood Explorer</a>
+                    </div>
+                </div>
+                <a href="#" class="hover:text-sunshine-orange transition-colors">Favorites</a>
+                <a href="blog.html" class="hover:text-sunshine-orange transition-colors">Blog</a>
+                <a href="#" class="hover:text-sunshine-orange transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">
+                    <i data-lucide="sun" class="block dark:hidden"></i>
+                    <i data-lucide="moon" class="hidden dark:block"></i>
+                </button>
+                <button class="hidden md:block bg-sunshine-orange text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                    List Property
+                </button>
+                <button class="md:hidden p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="relative flex-grow">
+        <div id="map" class="w-full h-full"></div>
+        <div id="map-controls" class="map-controls">
+            <h3 class="font-display font-bold text-lg mb-3">Explore Amenities</h3>
+            <div class="space-y-3">
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="checkbox" id="toggle-schools" data-layer="schools" class="form-checkbox">
+                    <i data-lucide="school" class="w-5 h-5 text-ocean-blue"></i>
+                    <span>Schools</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="checkbox" id="toggle-healthcare" data-layer="healthcare" class="form-checkbox">
+                    <i data-lucide="hospital" class="w-5 h-5 text-red-500"></i>
+                    <span>Healthcare</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="checkbox" id="toggle-restaurants" data-layer="restaurants" class="form-checkbox">
+                    <i data-lucide="utensils-crossed" class="w-5 h-5 text-yellow-600"></i>
+                    <span>Restaurants</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="checkbox" id="toggle-beaches" data-layer="beaches" class="form-checkbox">
+                     <i data-lucide="waves" class="w-5 h-5 text-cyan-500"></i>
+                    <span>Beach Access</span>
+                </label>
+            </div>
+        </div>
+    </main>
+    
+    <script type="module" src="neighborhood_explorer.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>
+</body>
+</html>

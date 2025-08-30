@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Resource Center - SunScapes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sunshine-orange': '#FFA500',
+                        'ocean-blue': '#0077BE',
+                        'sand-beige': '#F5E6D3',
+                        'charcoal': '#2C3E50',
+                    },
+                    fontFamily: {
+                        'sans': ['Open Sans', 'sans-serif'],
+                        'display': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white dark:bg-charcoal text-charcoal dark:text-sand-beige transition-colors duration-300">
+
+    <header class="bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="https://r2.flowith.net/files/4a9e2ea6-7bb8-4edd-a812-957afef9b132/1755746305074-logo_sm@180x131.png" alt="SunScapes Logo" class="h-10">
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-display font-semibold">
+                <a href="index.html#featured-properties" class="hover:text-sunshine-orange transition-colors">Properties</a>
+                <a href="agent_profile.html" class="hover:text-sunshine-orange transition-colors">Our Agents</a>
+                <div class="relative" id="tools-dropdown-container">
+                    <button id="tools-dropdown-button" class="hover:text-sunshine-orange transition-colors flex items-center">
+                        <span>Tools</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
+                    </button>
+                    <div id="tools-dropdown-menu" class="hidden absolute top-full mt-2 w-56 bg-white dark:bg-charcoal rounded-md shadow-lg py-1 z-50 ring-1 ring-black ring-opacity-5">
+                        <a href="quiz.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Dream Property Quiz</a>
+                        <a href="roi_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Investment ROI Calculator</a>
+                        <a href="cost_of_living_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Cost of Living Calculator</a>
+                        <a href="neighborhood_explorer.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Neighborhood Explorer</a>
+                        <a href="legal_resources.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50 border-t border-gray-200 dark:border-gray-600">Legal Resource Center</a>
+                    </div>
+                </div>
+                <a href="#" class="hover:text-sunshine-orange transition-colors">Favorites</a>
+                <a href="blog.html" class="hover:text-sunshine-orange transition-colors">Blog</a>
+                <a href="#" class="hover:text-sunshine-orange transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">
+                    <i data-lucide="sun" class="block dark:hidden"></i>
+                    <i data-lucide="moon" class="hidden dark:block"></i>
+                </button>
+                <button class="hidden md:block bg-sunshine-orange text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                    List Property
+                </button>
+                <button class="md:hidden p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-16 md:py-24 bg-sand-beige/30 dark:bg-charcoal/70">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-display font-bold">Legal Resource Center</h1>
+                <p class="text-lg text-charcoal/70 dark:text-sand-beige/70 mt-4 max-w-3xl mx-auto">Essential guides and checklists to navigate your property purchase in Mexico with confidence.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-charcoal p-6 rounded-lg shadow-md flex flex-col items-start">
+                    <i data-lucide="file-text" class="w-12 h-12 text-ocean-blue mb-4"></i>
+                    <h3 class="font-display text-xl font-bold mb-2">Guide to Buying as a Foreigner</h3>
+                    <p class="text-charcoal/80 dark:text-sand-beige/80 mb-4 flex-grow">A comprehensive walkthrough of the entire process, from finding a property to closing the deal.</p>
+                    <button class="mt-auto w-full bg-ocean-blue text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center space-x-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        <span>Download PDF</span>
+                    </button>
+                </div>
+                <div class="bg-white dark:bg-charcoal p-6 rounded-lg shadow-md flex flex-col items-start">
+                    <i data-lucide="shield-check" class="w-12 h-12 text-ocean-blue mb-4"></i>
+                    <h3 class="font-display text-xl font-bold mb-2">Understanding the Fideicomiso</h3>
+                    <p class="text-charcoal/80 dark:text-sand-beige/80 mb-4 flex-grow">An in-depth explanation of the bank trust system for foreign property ownership in restricted zones.</p>
+                    <button class="mt-auto w-full bg-ocean-blue text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center space-x-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        <span>Download PDF</span>
+                    </button>
+                </div>
+                <div class="bg-white dark:bg-charcoal p-6 rounded-lg shadow-md flex flex-col items-start">
+                    <i data-lucide="list-checks" class="w-12 h-12 text-ocean-blue mb-4"></i>
+                    <h3 class="font-display text-xl font-bold mb-2">Buyer's Closing Checklist</h3>
+                    <p class="text-charcoal/80 dark:text-sand-beige/80 mb-4 flex-grow">A step-by-step checklist to ensure you have all necessary documents for a smooth closing.</p>
+                    <button class="mt-auto w-full bg-ocean-blue text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center space-x-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        <span>Download PDF</span>
+                    </button>
+                </div>
+                <div class="bg-white dark:bg-charcoal p-6 rounded-lg shadow-md flex flex-col items-start">
+                    <i data-lucide="landmark" class="w-12 h-12 text-ocean-blue mb-4"></i>
+                    <h3 class="font-display text-xl font-bold mb-2">Notary Public (Notario) Role</h3>
+                    <p class="text-charcoal/80 dark:text-sand-beige/80 mb-4 flex-grow">Learn about the crucial role of the Notario Publico in Mexican real estate transactions.</p>
+                    <button class="mt-auto w-full bg-ocean-blue text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center space-x-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        <span>Download PDF</span>
+                    </button>
+                </div>
+                <div class="bg-white dark:bg-charcoal p-6 rounded-lg shadow-md flex flex-col items-start">
+                    <i data-lucide="percent" class="w-12 h-12 text-ocean-blue mb-4"></i>
+                    <h3 class="font-display text-xl font-bold mb-2">Guide to Closing Costs & Taxes</h3>
+                    <p class="text-charcoal/80 dark:text-sand-beige/80 mb-4 flex-grow">An overview of the typical costs, fees, and taxes associated with buying property in Baja California Sur.</p>
+                    <button class="mt-auto w-full bg-ocean-blue text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center space-x-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        <span>Download PDF</span>
+                    </button>
+                </div>
+                 <div class="bg-white dark:bg-charcoal p-6 rounded-lg shadow-md flex flex-col items-start">
+                    <i data-lucide="home" class="w-12 h-12 text-ocean-blue mb-4"></i>
+                    <h3 class="font-display text-xl font-bold mb-2">Title Insurance Explained</h3>
+                    <p class="text-charcoal/80 dark:text-sand-beige/80 mb-4 flex-grow">Understand the importance of title insurance and how it protects your investment in Mexico.</p>
+                    <button class="mt-auto w-full bg-ocean-blue text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center space-x-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        <span>Download PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-charcoal text-sand-beige/80 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">SunScapes</h4>
+                    <p class="text-sm">Discover your perfect vacation home or permanent residence with stunning views and prime locations.</p>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#featured-properties" class="hover:text-sunshine-orange transition">Properties</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">List Property</a></li>
+                        <li><a href="blog.html" class="hover:text-sunshine-orange transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Support</h4>
+                     <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Help Center</a></li>
+                        <li><a href="legal_resources.html" class="hover:text-sunshine-orange transition">Legal Resources</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">About Us</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Stay Updated</h4>
+                    <p class="text-sm mb-3">Get exclusive access to new listings and market insights.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Email Address" class="bg-gray-700 text-white p-2 rounded-l-md w-full focus:outline-none focus:ring-2 focus:ring-sunshine-orange">
+                        <button class="bg-sunshine-orange p-2 rounded-r-md hover:opacity-90 transition">
+                            <i data-lucide="send" class="w-5 h-5 text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2025 SunScapes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

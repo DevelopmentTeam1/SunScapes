@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunScapes - Discover Your Perfect Paradise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sunshine-orange': '#FFA500',
+                        'ocean-blue': '#0077BE',
+                        'sand-beige': '#F5E6D3',
+                        'charcoal': '#2C3E50',
+                    },
+                    fontFamily: {
+                        'sans': ['Open Sans', 'sans-serif'],
+                        'display': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <div id="hreflang-container"></div>
+</head>
+<body class="bg-white dark:bg-charcoal text-charcoal dark:text-sand-beige transition-colors duration-300">
+
+    <header class="bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="https://r2.flowith.net/files/4a9e2ea6-7bb8-4edd-a812-957afef9b132/1755746305074-logo_sm@180x131.png" alt="SunScapes Logo" class="h-10">
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-display font-semibold">
+                <a href="#featured-properties" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_properties">Properties</a>
+                <a href="agent_profile.html" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_our_agents">Our Agents</a>
+                <div class="relative" id="tools-dropdown-container">
+                    <button id="tools-dropdown-button" class="hover:text-sunshine-orange transition-colors flex items-center">
+                        <span data-i18n="nav_tools">Tools</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
+                    </button>
+                    <div id="tools-dropdown-menu" class="hidden absolute top-full mt-2 w-56 bg-white dark:bg-charcoal rounded-md shadow-lg py-1 z-50 ring-1 ring-black ring-opacity-5">
+                        <a href="quiz.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50" data-i18n="nav_dream_property_quiz">Dream Property Quiz</a>
+                        <a href="roi_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50" data-i18n="nav_roi_calculator">Investment ROI Calculator</a>
+                        <a href="cost_of_living_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50" data-i18n="nav_cost_of_living_calculator">Cost of Living Calculator</a>
+                        <a href="neighborhood_explorer.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50" data-i18n="nav_neighborhood_explorer">Neighborhood Explorer</a>
+                        <a href="climate_comparison.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50" data-i18n="nav_climate_comparison">Climate Comparison</a>
+                        <a href="legal_resources.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50 border-t border-gray-200 dark:border-gray-600" data-i18n="nav_legal_resource_center">Legal Resource Center</a>
+                    </div>
+                </div>
+                <a href="forums.html" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_forums">Forums</a>
+                <a href="dashboard.html" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_dashboard">Dashboard</a>
+                <a href="#" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_favorites">Favorites</a>
+                <a href="blog.html" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_blog">Blog</a>
+                <a href="#" class="hover:text-sunshine-orange transition-colors" data-i18n="nav_contact">Contact</a>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div id="language-switcher-container"></div>
+                <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">
+                    <i data-lucide="sun" class="block dark:hidden"></i>
+                    <i data-lucide="moon" class="hidden dark:block"></i>
+                </button>
+                <button class="hidden md:block bg-sunshine-orange text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity" data-i18n="list_property">
+                    List Property
+                </button>
+                <button class="md:hidden p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="relative min-h-[70vh] flex items-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=2070&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="relative container mx-auto px-6 text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-display font-bold mb-4" data-i18n="hero_title">Discover Your Perfect Baja Paradise</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8" data-i18n="hero_subtitle">From stunning vacation homes to permanent residences, find your ideal property with breathtaking views.</p>
+                
+                <div class="bg-white/90 dark:bg-charcoal/90 p-4 rounded-xl shadow-2xl max-w-6xl mx-auto backdrop-blur-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-10 gap-4 items-center">
+                        <div class="md:col-span-7">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                <div class="text-left">
+                                    <label for="location" class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1" data-i18n="search_location_label">Location</label>
+                                    <input type="text" id="location" data-i18n-placeholder="search_location_placeholder" placeholder="e.g. Cabo San Lucas" class="w-full bg-sand-beige/40 dark:bg-gray-700 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sunshine-orange text-charcoal dark:text-white">
+                                </div>
+                                <div class="text-left">
+                                    <label for="prop-type" class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1" data-i18n="search_prop_type_label">Property Type</label>
+                                    <select id="prop-type" class="w-full bg-sand-beige/40 dark:bg-gray-700 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sunshine-orange text-charcoal dark:text-white">
+                                        <option data-i18n="search_prop_type_all">All Types</option>
+                                        <option data-i18n="search_prop_type_house">House</option>
+                                        <option data-i18n="search_prop_type_condo">Condo</option>
+                                        <option data-i18n="search_prop_type_villa">Villa</option>
+                                        <option data-i18n="search_prop_type_land">Land</option>
+                                    </select>
+                                </div>
+                                 <div class="text-left">
+                                    <label for="price-range" class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1" data-i18n="search_price_range_label">Price Range</label>
+                                     <select id="price-range" class="w-full bg-sand-beige/40 dark:bg-gray-700 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sunshine-orange text-charcoal dark:text-white">
+                                        <option data-i18n="search_price_range_any">Any Price</option>
+                                        <option>$100k - $500k</option>
+                                        <option>$500k - $1M</option>
+                                        <option>$1M+</option>
+                                    </select>
+                                </div>
+                                <button class="bg-ocean-blue text-white w-full h-full p-2 rounded-md flex items-center justify-center space-x-2 hover:bg-ocean-blue/90 transition">
+                                    <i data-lucide="search" class="w-5 h-5"></i>
+                                    <span class="font-semibold" data-i18n="search_button">Search</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="md:col-span-3 h-24 md:h-full bg-sand-beige/50 dark:bg-gray-700/50 rounded-lg flex items-center justify-center text-center text-gray-600 dark:text-gray-300">
+                           <div class="text-center">
+                             <a href="neighborhood_explorer.html" class="block hover:text-sunshine-orange transition-colors">
+                                <i data-lucide="map" class="mx-auto w-8 h-8 mb-1"></i>
+                                <p class="font-semibold text-sm" data-i18n="explore_on_map">Explore on Map</p>
+                             </a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="featured-properties" class="py-16 md:py-24 bg-sand-beige/30 dark:bg-charcoal/70">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold" data-i18n="featured_properties_title">Featured Properties</h2>
+                    <p class="text-lg text-charcoal/70 dark:text-sand-beige/70 mt-2" data-i18n="featured_properties_subtitle">Discover our handpicked collection of premium vacation homes and luxury residences.</p>
+                </div>
+
+                <div id="property-listings" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+            </div>
+        </section>
+        
+        <section class="py-16 md:py-24 bg-white dark:bg-charcoal">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold" data-i18n="why_choose_title">Why Choose SunScapes?</h2>
+                    <p class="text-lg text-charcoal/70 dark:text-sand-beige/70 mt-2" data-i18n="why_choose_subtitle">Connecting you with exceptional properties in prime global locations.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-sunshine-orange/10 p-4 rounded-full mb-4">
+                           <i data-lucide="gem" class="w-10 h-10 text-sunshine-orange"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold mb-2" data-i18n="why_curated_title">Curated Selection</h3>
+                        <p class="text-charcoal/70 dark:text-sand-beige/70" data-i18n="why_curated_desc">Every property is carefully vetted and selected for its exceptional quality, location, and potential.</p>
+                    </div>
+                     <div class="flex flex-col items-center">
+                        <div class="bg-ocean-blue/10 p-4 rounded-full mb-4">
+                           <i data-lucide="users" class="w-10 h-10 text-ocean-blue"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold mb-2" data-i18n="why_expert_title">Expert Guidance</h3>
+                        <p class="text-charcoal/70 dark:text-sand-beige/70" data-i18n="why_expert_desc">Our experienced team provides personalized service and market insights to guide your decisions.</p>
+                    </div>
+                     <div class="flex flex-col items-center">
+                        <div class="bg-sand-beige p-4 rounded-full mb-4">
+                           <i data-lucide="shield-check" class="w-10 h-10 text-charcoal"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold mb-2" data-i18n="why_trusted_title">Trusted Process</h3>
+                        <p class="text-charcoal/70 dark:text-sand-beige/70" data-i18n="why_trusted_desc">From search to closing, we ensure a smooth, transparent, and secure real estate experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-16 md:py-24 bg-sand-beige/30 dark:bg-charcoal/70">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold" data-i18n="testimonials_title">Hear From Our Happy Clients</h2>
+                    <p class="text-lg text-charcoal/70 dark:text-sand-beige/70 mt-2" data-i18n="testimonials_subtitle">We're proud to have helped so many find their dream homes.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-charcoal p-6 rounded-lg shadow-md flex flex-col">
+                        <div class="relative mb-4 aspect-video bg-gray-300 dark:bg-gray-700 rounded-md overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723a9ce6890?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover" alt="Beach view from property">
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                <button class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/50 transition">
+                                    <i data-lucide="play" class="w-8 h-8 fill-white"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <blockquote class="text-charcoal/80 dark:text-sand-beige/80 italic flex-grow" data-i18n="testimonial_1_quote">"SunScapes made our dream of owning a home in Cabo a reality. Their team was professional, knowledgeable, and incredibly supportive throughout the entire process."</blockquote>
+                        <p class="mt-4 font-bold font-display text-sunshine-orange" data-i18n="testimonial_1_author">- The Johnson Family</p>
+                    </div>
+                    <div class="bg-white dark:bg-charcoal p-6 rounded-lg shadow-md flex flex-col">
+                        <div class="relative mb-4 aspect-video bg-gray-300 dark:bg-gray-700 rounded-md overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover" alt="Happy couple in new home">
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                <button class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/50 transition">
+                                    <i data-lucide="play" class="w-8 h-8 fill-white"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <blockquote class="text-charcoal/80 dark:text-sand-beige/80 italic flex-grow" data-i18n="testimonial_2_quote">"The level of detail and care from the SunScapes agents was unmatched. We found the perfect investment property thanks to their expert guidance."</blockquote>
+                        <p class="mt-4 font-bold font-display text-sunshine-orange" data-i18n="testimonial_2_author">- Michael & Sarah</p>
+                    </div>
+                    <div class="bg-white dark:bg-charcoal p-6 rounded-lg shadow-md flex flex-col">
+                        <div class="relative mb-4 aspect-video bg-gray-300 dark:bg-gray-700 rounded-md overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop" class="w-full h-full object-cover" alt="Man signing papers">
+                             <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                <button class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/50 transition">
+                                    <i data-lucide="play" class="w-8 h-8 fill-white"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <blockquote class="text-charcoal/80 dark:text-sand-beige/80 italic flex-grow" data-i18n="testimonial_3_quote">"As a foreign buyer, the process seemed daunting. SunScapes provided the clarity and confidence I needed. Highly recommended!"</blockquote>
+                        <p class="mt-4 font-bold font-display text-sunshine-orange" data-i18n="testimonial_3_author">- David Chen</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-charcoal text-sand-beige/80 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4" data-i18n="footer_about_title">SunScapes</h4>
+                    <p class="text-sm" data-i18n="footer_about_desc">Discover your perfect vacation home or permanent residence with stunning views and prime locations.</p>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4" data-i18n="footer_links_title">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#featured-properties" class="hover:text-sunshine-orange transition" data-i18n="footer_link_properties">Properties</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition" data-i18n="footer_link_list_property">List Property</a></li>
+                        <li><a href="blog.html" class="hover:text-sunshine-orange transition" data-i18n="footer_link_blog">Blog</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition" data-i18n="footer_link_contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4" data-i18n="footer_support_title">Support</h4>
+                     <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-sunshine-orange transition" data-i18n="footer_support_help">Help Center</a></li>
+                        <li><a href="legal_resources.html" class="hover:text-sunshine-orange transition" data-i18n="footer_support_legal">Legal Resources</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition" data-i18n="footer_support_privacy">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition" data-i18n="footer_support_terms">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition" data-i18n="footer_support_about">About Us</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4" data-i18n="footer_newsletter_title">Stay Updated</h4>
+                    <p class="text-sm mb-3" data-i18n="footer_newsletter_desc">Get exclusive access to new listings and market insights.</p>
+                    <div class="flex">
+                        <input type="email" data-i18n-placeholder="footer_newsletter_placeholder" placeholder="Email Address" class="bg-gray-700 text-white p-2 rounded-l-md w-full focus:outline-none focus:ring-2 focus:ring-sunshine-orange">
+                        <button class="bg-sunshine-orange p-2 rounded-r-md hover:opacity-90 transition">
+                            <i data-lucide="send" class="w-5 h-5 text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+                <p data-i18n="footer_copyright">&copy; 2025 SunScapes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="chatbot-ui">
+        <button id="chat-icon-button" class="fixed bottom-6 right-6 bg-ocean-blue text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center hover:bg-ocean-blue/90 transition-transform hover:scale-110 z-50">
+            <i data-lucide="message-circle" class="w-8 h-8"></i>
+        </button>
+
+        <div id="chat-window" class="chat-window chat-hidden">
+            <div class="flex flex-col h-[60vh] max-h-[600px]">
+                <div class="flex justify-between items-center p-4 bg-charcoal text-white rounded-t-lg">
+                    <h3 class="font-display font-bold" data-i18n="chatbot_title">Virtual Buyer's Agent</h3>
+                    <button id="close-chat-button" class="p-1 hover:bg-white/20 rounded-full">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <div id="chat-messages" class="flex-grow p-4 overflow-y-auto bg-sand-beige/30 dark:bg-charcoal/70">
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-ocean-blue flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="bot" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div class="bg-white dark:bg-charcoal/80 p-3 rounded-lg max-w-xs">
+                                <p class="text-sm" data-i18n="chatbot_greeting">Hello! How can I help you find your dream property in Baja today?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 border-t border-sand-beige dark:border-charcoal/50 bg-white dark:bg-charcoal/80">
+                    <div class="flex items-center gap-2">
+                        <input type="text" data-i18n-placeholder="chatbot_input_placeholder" placeholder="Type your message..." class="w-full bg-sand-beige/40 dark:bg-gray-700 p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-sunshine-orange text-charcoal dark:text-white">
+                        <button class="bg-sunshine-orange text-white p-3 rounded-full hover:opacity-90 transition-opacity flex-shrink-0">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="i18n.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

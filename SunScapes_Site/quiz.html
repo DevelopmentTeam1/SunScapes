@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Property Quiz - SunScapes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'sunshine-orange': '#FFA500',
+                        'ocean-blue': '#0077BE',
+                        'sand-beige': '#F5E6D3',
+                        'charcoal': '#2C3E50',
+                    },
+                    fontFamily: {
+                        'sans': ['Open Sans', 'sans-serif'],
+                        'display': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-sand-beige/30 dark:bg-charcoal/70 text-charcoal dark:text-sand-beige transition-colors duration-300">
+
+    <header class="bg-white/80 dark:bg-charcoal/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="https://r2.flowith.net/files/4a9e2ea6-7bb8-4edd-a812-957afef9b132/1755746305074-logo_sm@180x131.png" alt="SunScapes Logo" class="h-10">
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-display font-semibold">
+                <a href="index.html#featured-properties" class="hover:text-sunshine-orange transition-colors">Properties</a>
+                <div class="relative" id="tools-dropdown-container">
+                    <button id="tools-dropdown-button" class="text-sunshine-orange flex items-center">
+                        <span>Tools</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
+                    </button>
+                    <div id="tools-dropdown-menu" class="hidden absolute top-full mt-2 w-56 bg-white dark:bg-charcoal rounded-md shadow-lg py-1 z-50 ring-1 ring-black ring-opacity-5">
+                        <a href="quiz.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Dream Property Quiz</a>
+                        <a href="roi_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Investment ROI Calculator</a>
+                        <a href="cost_of_living_calculator.html" class="block px-4 py-2 text-sm text-charcoal dark:text-sand-beige hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">Cost of Living Calculator</a>
+                    </div>
+                </div>
+                <a href="#" class="hover:text-sunshine-orange transition-colors">Favorites</a>
+                <a href="blog.html" class="hover:text-sunshine-orange transition-colors">Blog</a>
+                <a href="#" class="hover:text-sunshine-orange transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-sand-beige/50 dark:hover:bg-charcoal/50">
+                    <i data-lucide="sun" class="block dark:hidden"></i>
+                    <i data-lucide="moon" class="hidden dark:block"></i>
+                </button>
+                <button class="hidden md:block bg-sunshine-orange text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                    List Property
+                </button>
+                <button class="md:hidden p-2">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        <div class="max-w-2xl mx-auto">
+            <div id="quiz-container">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl md:text-4xl font-display font-bold">Find Your Dream Property</h1>
+                    <p class="text-lg text-charcoal/70 dark:text-sand-beige/70 mt-2">Answer a few questions to get personalized recommendations.</p>
+                </div>
+
+                <div class="bg-white dark:bg-charcoal rounded-xl shadow-lg p-6 md:p-8">
+                    <div class="w-full bg-sand-beige/50 dark:bg-charcoal/50 rounded-full h-2.5 mb-8">
+                        <div id="progress-bar-fill" class="bg-sunshine-orange h-2.5 rounded-full progress-bar-fill" style="width: 25%"></div>
+                    </div>
+                    
+                    <div class="min-h-[250px]">
+                        <div class="quiz-step" data-step="1">
+                            <h2 class="text-xl font-bold mb-6 text-center">What's your ideal vibe?</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <label class="p-4 border-2 border-sand-beige dark:border-gray-700 rounded-lg text-center cursor-pointer has-[:checked]:border-ocean-blue has-[:checked]:ring-2 has-[:checked]:ring-ocean-blue">
+                                    <input type="radio" name="lifestyle" value="beachfront relaxation" class="sr-only">
+                                    <i data-lucide="umbrella" class="w-12 h-12 mx-auto text-ocean-blue mb-2"></i>
+                                    <span class="font-semibold">Beachfront Relaxation</span>
+                                </label>
+                                <label class="p-4 border-2 border-sand-beige dark:border-gray-700 rounded-lg text-center cursor-pointer has-[:checked]:border-ocean-blue has-[:checked]:ring-2 has-[:checked]:ring-ocean-blue">
+                                    <input type="radio" name="lifestyle" value="vibrant city life" class="sr-only">
+                                    <i data-lucide="martini" class="w-12 h-12 mx-auto text-ocean-blue mb-2"></i>
+                                    <span class="font-semibold">Vibrant City Life</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="quiz-step" data-step="2">
+                             <h2 class="text-xl font-bold mb-6 text-center">What's your budget?</h2>
+                             <div class="px-4">
+                                <input id="budget-slider" type="range" name="budget" min="100000" max="3000000" step="50000" value="750000" class="w-full h-2 bg-sand-beige rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                <div class="text-center font-bold text-2xl mt-4 text-ocean-blue dark:text-sunshine-orange" id="budget-value">$750,000</div>
+                             </div>
+                        </div>
+
+                        <div class="quiz-step" data-step="3">
+                             <h2 class="text-xl font-bold mb-6 text-center">How much space do you need?</h2>
+                             <div class="px-4">
+                                <input type="range" name="bedrooms" min="1" max="6" value="3" class="w-full h-2 bg-sand-beige rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                <div class="text-center font-bold text-2xl mt-4 text-ocean-blue dark:text-sunshine-orange" id="bedrooms-value">3+ bedrooms</div>
+                             </div>
+                        </div>
+
+                        <div class="quiz-step" data-step="4">
+                            <h2 class="text-xl font-bold mb-6 text-center">What are your must-haves?</h2>
+                             <div class="grid grid-cols-2 gap-4">
+                                <label class="flex items-center space-x-3 p-3 border-2 border-sand-beige dark:border-gray-700 rounded-lg cursor-pointer has-[:checked]:border-ocean-blue has-[:checked]:ring-2 has-[:checked]:ring-ocean-blue">
+                                    <input type="checkbox" name="amenities" value="Pool" class="form-checkbox text-sunshine-orange focus:ring-sunshine-orange h-5 w-5">
+                                    <span>Pool</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 border-2 border-sand-beige dark:border-gray-700 rounded-lg cursor-pointer has-[:checked]:border-ocean-blue has-[:checked]:ring-2 has-[:checked]:ring-ocean-blue">
+                                    <input type="checkbox" name="amenities" value="Ocean View" class="form-checkbox text-sunshine-orange focus:ring-sunshine-orange h-5 w-5">
+                                    <span>Ocean View</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 border-2 border-sand-beige dark:border-gray-700 rounded-lg cursor-pointer has-[:checked]:border-ocean-blue has-[:checked]:ring-2 has-[:checked]:ring-ocean-blue">
+                                    <input type="checkbox" name="amenities" value="Gym" class="form-checkbox text-sunshine-orange focus:ring-sunshine-orange h-5 w-5">
+                                    <span>Gym</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 border-2 border-sand-beige dark:border-gray-700 rounded-lg cursor-pointer has-[:checked]:border-ocean-blue has-[:checked]:ring-2 has-[:checked]:ring-ocean-blue">
+                                    <input type="checkbox" name="amenities" value="Garage" class="form-checkbox text-sunshine-orange focus:ring-sunshine-orange h-5 w-5">
+                                    <span>Garage</span>
+                                </label>
+                             </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between mt-8">
+                        <button id="prev-btn" class="bg-gray-300 dark:bg-gray-600 text-charcoal dark:text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity">Previous</button>
+                        <button id="next-btn" class="bg-sunshine-orange text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="result-container" class="hidden text-center">
+                 <div class="bg-white dark:bg-charcoal rounded-xl shadow-lg p-6 md:p-8">
+                     <i data-lucide="party-popper" class="w-16 h-16 mx-auto text-sunshine-orange"></i>
+                     <h1 class="text-3xl md:text-4xl font-display font-bold mt-4">Your Dream Profile</h1>
+                     <p class="text-lg text-charcoal/70 dark:text-sand-beige/70 mt-2 mb-6">Based on your answers, here's what we think you'll love:</p>
+                     <div id="result-profile" class="text-left max-w-md mx-auto mb-8">
+                     </div>
+                     <a id="result-link" href="index.html" class="bg-ocean-blue text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity inline-flex items-center space-x-2">
+                        <span>See Matching Properties</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                     </a>
+                 </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-charcoal text-sand-beige/80 py-12 mt-20">
+        <div class="container mx-auto px-6">
+             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">SunScapes</h4>
+                    <p class="text-sm">Discover your perfect vacation home or permanent residence with stunning views and prime locations.</p>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#featured-properties" class="hover:text-sunshine-orange transition">Properties</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">List Property</a></li>
+                        <li><a href="blog.html" class="hover:text-sunshine-orange transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Support</h4>
+                     <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Help Center</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-sunshine-orange transition">About Us</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-display font-bold text-white text-lg mb-4">Stay Updated</h4>
+                    <p class="text-sm mb-3">Get exclusive access to new listings and market insights.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Email Address" class="bg-gray-700 text-white p-2 rounded-l-md w-full focus:outline-none focus:ring-2 focus:ring-sunshine-orange">
+                        <button class="bg-sunshine-orange p-2 rounded-r-md hover:opacity-90 transition">
+                            <i data-lucide="send" class="w-5 h-5 text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2025 SunScapes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type="module" src="quiz.js"></script>
+</body>
+</html>
